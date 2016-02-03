@@ -1,0 +1,92 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>龙辰账号管理中心</title>
+    <link href="/static/cp/css/page/right.css" media="all" type="text/css" rel="stylesheet">
+    <script src="/static/cp/js/jquery.js"></script>
+    <script src="/static/cp/js/load_box.js"></script>
+    <script language="javascript">
+        var msg='';
+        if (window.webkitNotifications) {
+            if (window.webkitNotifications.checkPermission() != 0) {
+                window.webkitNotifications.requestPermission();
+            }
+        }
+
+    </script>
+    <!--[if IE 6]>
+    <style type="text/css">
+        fileset{width:100%; border:1px solid #333;}
+        html{overflow:hidden;}
+        body{height:100%;overflow:auto;}
+        #loadding {
+            position: absolute;
+            bottom: auto;
+            clear: both;
+            top:expression(eval(document.compatMode &&
+        document.compatMode=='CSS1Compat') ?
+        documentElement.scrollTop
+        +(documentElement.clientHeight-this.clientHeight) - 1
+        : document.body.scrollTop
+        +(document.body.clientHeight-this.clientHeight) - 1);
+        }
+    </style>
+    <![endif]-->
+</head>
+
+<body>
+<div class="content">
+    <!--    <header>-->
+    <!--        <div class="msg">-->
+    <!--            <span class="label">未完成任务提醒：</span>与我相关 <a class="red" href="#">4</a> | 我的下单 <a class="red" href="#">6</a> | 我的工作组 <a class="red" href="#">12</a>  使用<span class="blue">chrome</span>浏览器开启桌面任务提醒-->
+    <!--        </div>-->
+    <!--        <div class="bread-crumbs">-->
+    <!--            <i class="home-icon"></i><a href="#">首页</a><span>&gt;</span><a href="#">OA订单</a><span>&gt;</span>工作管理-->
+    <!--        </div>-->
+    <!--    </header>-->
+    <div class="box">
+        <section>
+            <!-- 头部 -->
+            <!-- 头部 -->
+            <div id="loadding" style="display: none;background:#408ad9;text-align:center;width:300px;height:50px;line-height:50px;color:#fff;position:absolute;top:200px;left:30%;z-index: 9999;">正在请求,请稍等...</div>
+            <!-- 导航条 -->
+            <!-- 导航条 -->
+
+            <fieldset>
+                <legend>新闻列表</legend>
+                <table width="100%" class="form table-striped">
+                    <tr>
+                        <td>
+                            <a target="_blank" href="http://passport.longchen80.com/admin/news/detail/6"><span class="pull-right">2015-12-29</span>员工常见问题解答</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a target="_blank" href="http://passport.longchen80.com/admin/news/detail/2"><span class="pull-right">2015-12-01</span>关于元旦及春节放假安排的通知</a>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <!-- 底部 -->
+            <!-- 底部 -->
+        </section>
+    </div>
+</div>
+<script>
+    $(function(){
+        $("#loadding").bind('ajaxStart',function(){
+            $("body").css("cursor","wait");
+            loading.show();
+        }).bind('ajaxStop',function(){
+            $("body").css("cursor","auto");
+            loading.hide();
+        });
+        if(msg)alert(msg);
+    })
+
+</script>
+</body>
+</html>
+
